@@ -1,0 +1,40 @@
+<h1>Greeting</h1>
+<div ng-show="authenticated">
+    <p>The ID is {{controller.greeting.id}}</p>
+    <p>The content is {{controller.greeting.content}}</p>
+</div>
+<div  ng-show="!authenticated">
+    <p>Login to see your greeting</p>
+</div>
+
+
+
+	<div class="row">
+		
+		<div class="col-md-6">
+			<div class="thumbnail">
+				<table class="table table-hover">
+					<tr>
+						<td>ID</td>
+						<td>NAME</td>
+					</tr>
+					<tr ng-repeat="team in teams">
+						<td>{{ team.id }}</td>
+						<td>{{ team.name }}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="thumbnail">
+				<div class="caption">
+					<h3>Thumbnail label</h3>
+					<p>...</p>
+					<p>
+						<a href="#" class="btn btn-primary" role="button">Button</a> <a
+							href="#" class="btn btn-default" role="button">Button</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>

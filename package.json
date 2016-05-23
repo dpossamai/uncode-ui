@@ -29,6 +29,9 @@
     "gulp-useref": "^3.0.0",
     "gulp-war": "^0.1.4",
     "gulp-zip": "^3.2.0",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
     "main-bower-files": "^2.5.0",
     "wiredep": "^2.2.2"
   },

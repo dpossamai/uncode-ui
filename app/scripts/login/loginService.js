@@ -10,8 +10,8 @@
 			console.log('Making login!');
 			//TODO choose a authentication method
 			$http({
-				method : 'POST',
-				url : '/someUrl',
+				method : 'GET',
+				url : '/user'
 			}).then(function successCallback(response) {
 				console.log(response);
 			}, function errorCallback(response) {
@@ -19,9 +19,6 @@
 			});
 		}
 		
-		function setAuthentication(){
-			
-		}
 
 		return vm;
 	}

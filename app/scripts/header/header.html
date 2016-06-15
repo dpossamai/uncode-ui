@@ -1,0 +1,43 @@
+<!-- HEADER CONTENT-->
+<div ng-controller="NavigationCtrl as nav">
+
+	<div class="row">
+		<div class="col-md-3">
+			<a ng-if="!$root.authenticated" class="btn btn-default" ng-click="showModal()">Login</a>
+			<a ng-if="$root.authenticated" class="btn btn-default" ng-click="logout()">Logout</a>
+		</div>
+		<div class="col-md-6">
+			<div class="page-header text-center">
+				<h1>Soccer Teams Data!</h1>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="page-header text-center">
+				<h1>Team Data!</h1>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Search Teams"
+							ng-model="teamName" />
+					</div>
+					<button type="submit" class="btn btn-default"
+						ng-click="searchTeams()">Submit</button>
+				</form>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li ng-if="authenticated"><a ng-click="goProfile()">Your Profile</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+</div>
+<!-- END HEADER -->

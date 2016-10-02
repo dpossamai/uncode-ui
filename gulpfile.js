@@ -169,7 +169,7 @@ gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
 
 //TODO make all necessary tasks like build and test 
 gulp.task('default', () =>
-	gulp.src('test/spec/test.js')
+	gulp.src('test/spec/test_spec.js')
 		.pipe(jasmine())
 );
 
@@ -203,7 +203,7 @@ var jasmineBrowser = require('gulp-jasmine-browser');
 var watch = require('gulp-watch')
 
 gulp.task('jasmine', function() {
-  var filesForTest = ['src/**/*.js', 'spec/**/*_spec.js'] 
+  var filesForTest = ['app/**/*.js', 'test/**/*_spec.js'] 
   return gulp.src(filesForTest)
     .pipe(watch(filesForTest))
     .pipe(jasmineBrowser.specRunner())

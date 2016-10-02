@@ -2,14 +2,15 @@
 	angular.module('com.sec21.service.login', ['base64', 'angularModalService']).service('LoginService',
 			LoginService)
 
-	function LoginService($http, $base64, $state, ModalService, localStorageService) {
+	function LoginService($http, $base64, ModalService) {
 		var vm = {};
 		vm.login = _login;
 		vm.loginModal = _loginModal;
 		vm.logout = _logout;
+		vm.encodeAuthBasic = _encodeAuthBasic;
+		vm.decodeAuthBasic = _decodeAuthBasic;
 
 		function _login(username, password) {
-			console.log('Making login!');
 			//TODO choose a authentication method
 			return $http({
 				method : 'GET',
@@ -31,6 +32,14 @@
 				method : 'GET',
 				url : '/uncode-server/logout'
 			});
+		}
+		
+		function _encodeAuthBasic(username, password){
+			return $base64.encode(username + ":"+password);
+		}
+		
+		function _decodeAuthBasic(basic){
+			 return $base64.decode(basic);
 		}
 		
 		return vm;

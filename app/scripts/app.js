@@ -6,7 +6,9 @@ var app = angular.module('sec21',
 		 'com.sec21.helper.localStorage.config',
 		 'com.sec21.helper.localStorage',
 		 'com.sec21.controller.profile',
-		 'com.sec21.config.profile']);
+		 'com.sec21.config.profile',
+		 'com.sec21.service.team',
+		 'com.sec21.controller.home']);
 
 app.run(function ($rootScope, $state, LoginService) {
 	
@@ -24,7 +26,6 @@ app.run(function ($rootScope, $state, LoginService) {
 	            modal.close.then(function(result) {
 	            	console.log('You said ' + result);
 	            });
-//	            return $state.go(toState.name, toParams);
 	        })
 	        .catch(function () {
 	          return $state.go('home');

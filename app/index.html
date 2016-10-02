@@ -1,28 +1,31 @@
 <!doctype html>
 <html>
 <head>
+	
 	<title>Codeon</title>
 	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
 		rel="stylesheet">
-	<style type="text/css">
-	[ng\:cloak], [ng-cloak], .ng-cloak {
-		display: none !important;
-	}
-	</style>
 	
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		
+	<style type="text/css">
+		.thumbnail {
+/* 	    	border: #000; */
+/* 	    	border-color: #ff0000; */
+		}
+	</style>
 	
-	<script src="bower_components/angular/angular.min.js"></script>
-	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script
-		src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script
-		src="node_modules/angular-modal-service/dst/angular-modal-service.min.js"></script>
+		src="node_modules/angular-modal-service/dst/angular-modal-service.js"></script>
 	<script src="bower_components/angular-base64/angular-base64.js"></script>
 	
-	 <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	 <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
 	
 	<!-- Navigation -->
 	<script src="scripts/navigation/navigationController.js"></script>
@@ -40,14 +43,19 @@
 	<script src="scripts/profile/profileConfig.js"></script>
 	<script src="scripts/profile/profileController.js"></script>
 	
+	<!-- 	Team -->
+	<script src="scripts/team/teamService.js"></script>
 	<script src="scripts/app.js"></script>
-
+	
+	<!-- 	home -->
+	<script src="scripts/home/homeController.js"></script>
+	
 </head>
 
 <body ng-app="sec21">
 
-	<div ui-view="header" class="container"></div>
-	<div ui-view="content" class="container"></div>
+	<div ui-view="header"></div>
+	<div ui-view="content"></div>
 
 </body>
 </html>

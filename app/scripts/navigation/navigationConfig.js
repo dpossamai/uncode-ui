@@ -6,15 +6,13 @@ angular
 					$stateProvider.state('home', {
 						url : '/uncode-server/home',
 						views : {
-							"content" : {templateUrl: "/scripts/navigation/home.html"},
-							"header" : {templateUrl:"/scripts/header/header.html"}
+							"content" : {templateUrl: "/scripts/navigation/home.html", controller: "HomeCtrl"},
+							"header" : {templateUrl:"/scripts/header/header.html",controller: "NavigationCtrl"}
 						},
-						controller : 'NavigationCtrl',
 						data : {requireLogin : false}
 					}).state('login', {
 						url: '/uncode-server/login',
 						templateUrl : '/scripts/login/login.html',
-						controller : 'NavigationCtrl',
 						data : {requireLogin : false}
 					});
 					

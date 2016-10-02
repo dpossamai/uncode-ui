@@ -33,6 +33,7 @@
     "bootstrap": "~3.3.6"
   },
   "devDependencies": {
-    "angular-local-storage": "^0.2.7"
+    "angular-local-storage": "^0.2.7",
+    "qunit": "^2.0.1"
   }
 }

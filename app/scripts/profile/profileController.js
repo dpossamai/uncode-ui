@@ -3,6 +3,7 @@ angular.module('com.sec21.controller.profile', []).controller('ProfileCtrl', Pro
 		
 		
 	function ProfileController() {
+		
 	}
 	
 

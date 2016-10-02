@@ -2,12 +2,22 @@
 	angular.module('com.sec21.controller.navigation', ['com.sec21.service.login']).controller(
 			'NavigationCtrl', NavigationController)
 
-	function NavigationController($scope,$rootScope,$state, LoginService,localStorageService) {
-		var vm = {};
-		vm.showLoginModal = _showLoginModal;
+	function NavigationController($scope,$rootScope,$state, LoginService,localStorageService,TeamService) {
+		console.log("NAVIGATION CONTROLLER INSTANTIATED!");
+		$scope.goProfile = _goProfile;
+		$scope.goHome = _goHome;
 		$scope.showModal = _showLoginModal;
 		$scope.logout = _logout;
-		$scope.goProfile = _goProfile;
+		$scope.teams = [];
+		$scope.currentStateName = $state.current.name;
+		
+		function _goProfile(){
+			$state.go("profile");
+		}
+		
+		function _goHome(){
+			$state.go("home");
+		}
 		
 		function _showLoginModal() {
 			LoginService.loginModal().then(function(modal) {
@@ -35,11 +45,6 @@
 				});
 		}
 		
-		function _goProfile(){
-			$state.go("profile");
-		}
-		
-		return vm;
 	}
 
 })();

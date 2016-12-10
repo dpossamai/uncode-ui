@@ -8,6 +8,7 @@ var app = angular.module('sec21',
 		 'com.sec21.controller.profile',
 		 'com.sec21.config.profile',
 		 'com.sec21.service.team',
+		 'com.sec21.controller.sidebar',
 		 'com.sec21.controller.home']);
 
 app.run(function ($rootScope, $state, LoginService) {

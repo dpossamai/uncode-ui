@@ -7,7 +7,7 @@ angular
 						url : '/uncode-server/home',
 						views : {
 							"content" : {templateUrl: "/scripts/navigation/home.html", controller: "HomeCtrl"},
-							"header" : {templateUrl:"/scripts/header/header.html",controller: "NavigationCtrl"}
+							"sidebar" : {templateUrl:"/scripts/sidebar/sidebar.html",controller: "SideBarCtrl"}
 						},
 						data : {requireLogin : false}
 					}).state('login', {

@@ -1,61 +1,120 @@
 <!doctype html>
 <html>
 <head>
+
+<title>Codeon</title>
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript"
+	src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+<style type="text/css">
+.thumbnail {
+	/* 	    	border: #000; */
+	/* 	    	border-color: #ff0000; */
 	
-	<title>Codeon</title>
-	<link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
-		rel="stylesheet">
-	
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript"
-		src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-		
-	<style type="text/css">
-		.thumbnail {
-/* 	    	border: #000; */
-/* 	    	border-color: #ff0000; */
-		}
-	</style>
-	
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
-	<script
-		src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-	<script
-		src="node_modules/angular-modal-service/dst/angular-modal-service.js"></script>
-	<script src="bower_components/angular-base64/angular-base64.js"></script>
-	
-	 <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-	
-	<!-- Navigation -->
-	<script src="scripts/navigation/navigationController.js"></script>
-	<script src="scripts/navigation/navigationConfig.js"></script>
-	
-	<!-- Login -->
-	<script src="scripts/login/loginService.js"></script>
-	<script src="scripts/login/loginController.js"></script>
-	
-	<!-- Local Storage -->
-	<script src="scripts/localStorage/localStorageConfig.js"></script>
-	<script src="scripts/localStorage/localStorageService.js"></script>
-	
-	<!-- Profile -->
-	<script src="scripts/profile/profileConfig.js"></script>
-	<script src="scripts/profile/profileController.js"></script>
-	
-	<!-- 	Team -->
-	<script src="scripts/team/teamService.js"></script>
-	<script src="scripts/app.js"></script>
-	
-	<!-- 	home -->
-	<script src="scripts/home/homeController.js"></script>
-	
+}
+</style>
+
+<script>
+	$(document).ready(function () {
+		  var trigger = $('.hamburger'),
+		      overlay = $('.overlay'),
+		     isClosed = false;
+
+		    trigger.click(function () {
+		      hamburger_cross();      
+		    });
+
+		    function hamburger_cross() {
+
+		      if (isClosed == true) {          
+		        overlay.hide();
+		        trigger.removeClass('is-open');
+		        trigger.addClass('is-closed');
+		        isClosed = false;
+		      } else {   
+		        overlay.show();
+		        trigger.removeClass('is-closed');
+		        trigger.addClass('is-open');
+		        isClosed = true;
+		      }
+		  }
+		  
+		  $('[data-toggle="offcanvas"]').click(function () {
+		        $('#wrapper').toggleClass('toggled');
+		  });  
+		});
+	</script>
+
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script
+	src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script
+	src="node_modules/angular-modal-service/dst/angular-modal-service.js"></script>
+<script src="bower_components/angular-base64/angular-base64.js"></script>
+
+<script
+	src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+
+<!-- Navigation -->
+<script src="scripts/navigation/navigationController.js"></script>
+<script src="scripts/navigation/navigationConfig.js"></script>
+
+<!-- Login -->
+<script src="scripts/login/loginService.js"></script>
+<script src="scripts/login/loginController.js"></script>
+
+<!-- Local Storage -->
+<script src="scripts/localStorage/localStorageConfig.js"></script>
+<script src="scripts/localStorage/localStorageService.js"></script>
+
+<!-- Profile -->
+<script src="scripts/profile/profileConfig.js"></script>
+<script src="scripts/profile/profileController.js"></script>
+
+<!-- 	Team -->
+<script src="scripts/team/teamService.js"></script>
+<script src="scripts/app.js"></script>
+
+<!-- 	home -->
+<script src="scripts/home/homeController.js"></script>
+
+<!-- SideBar -->
+<script src="scripts/sidebar/sidebarController.js"></script>
+
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<link href="styles/navbar.css" rel="stylesheet">
 </head>
 
 <body ng-app="sec21">
 
-	<div ui-view="header"></div>
-	<div ui-view="content"></div>
-
+	<div id="wrapper">
+		<div class="overlay"></div>
+		<div ui-view="sidebar"></div>
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<button type="button" class="hamburger is-closed"
+				data-toggle="offcanvas">
+				<span class="hamb-top"></span> <span class="hamb-middle"></span> <span
+					class="hamb-bottom"></span>
+			</button>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<!--                        <div ui-view="header"></div> -->
+						<div ui-view="content"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /#page-content-wrapper -->
+	</div>
+	<!-- /#wrapper -->
 </body>
 </html>
